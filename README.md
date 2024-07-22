@@ -103,6 +103,12 @@ The root component that contains the router outlet for navigation.
 - Angular HTTP Client
 - FontAwesome for icons
 
+## Images
+![Deployment Demo](public/img/img-weather-1.png)
+![Deployment Demo](public/img/img-weather-2.png)
+![Deployment Demo](public/img/img-weather-3.png)
+
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

@@ -1,9 +1,16 @@
-<div *ngIf="weather">
-    <h2>{{city}}</h2>
-    <p>Temperature: {{weather.main.temp}} °C</p>
-    <p>Weather: {{weather.weather[0].description}}</p>
-    <p>Humidity: {{weather.main.humidity}} %</p>
-    <p>Pressure: {{weather.main.pressure}} hPa</p>
-    <p>Wind: {{weather.wind.speed}} m/s</p>
+<div class="container">
+    <button (click)="goBack()" class="back-button">
+      <fa-icon [icon]="['fas', 'arrow-left']"></fa-icon> Back
+    </button>
+    <div *ngIf="loading">Loading...</div>
+    <div class="error" *ngIf="errorMessage">{{ errorMessage }}</div>
+    <div *ngIf="weather && !loading">
+      <h2>{{city}}</h2>
+      <p>Temperature: {{weather.main.temp}} °C</p>
+      <p>Weather: {{weather.weather[0].description}}</p>
+      <p>Humidity: {{weather.main.humidity}} %</p>
+      <p>Pressure: {{weather.main.pressure}} hPa</p>
+      <p>Wind: {{weather.wind.speed}} m/s</p>
+    </div>
   </div>
   

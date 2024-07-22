@@ -1,12 +1,18 @@
-<div>
-    <input #newCity type="text" placeholder="Add city" />
-    <button (click)="addCity(newCity.value); newCity.value=''">Add</button>
+<div class="container">
+    <header>
+      <input #newCity type="text" placeholder="Add city" />
+      <button (click)="addCity(newCity.value); newCity.value=''">Add</button>
+    </header>
+  
+    <ul class="city-list">
+      <li *ngFor="let weather of weatherData">
+        <img [src]="'http://openweathermap.org/img/wn/' + weather.weather[0].icon + '.png'" alt="weather icon">
+        {{weather.city}}: {{weather.main.temp}} °C, {{weather.weather[0].description}}
+        <a [routerLink]="['/city', weather.city]">Details</a>
+      </li>
+    </ul>
+  
+    <div class="loading" *ngIf="loading">Loading...</div>
+    <div class="error" *ngIf="errorMessage">{{ errorMessage }}</div>
   </div>
-  <ul>
-    <li *ngFor="let weather of weatherData">
-      <img [src]="'http://openweathermap.org/img/wn/' + weather.weather[0].icon + '.png'" alt="weather icon">
-      {{weather.city}}: {{weather.main.temp}} °C, {{weather.weather[0].description}}
-      <a [routerLink]="['/city', weather.city]">Details</a>
-    </li>
-  </ul>
   

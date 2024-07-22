@@ -21,7 +21,7 @@ This is a simple weather application built using Angular. The application allows
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/weather-app.git
+   git clone https://github.com/heriipurnama/weather-app.git
    cd weather-app
    ```
 
